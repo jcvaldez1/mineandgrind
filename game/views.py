@@ -12,6 +12,7 @@ class PersonView(viewsets.ModelViewSet):
       serializer_class = PersonSerializer
       filter_backends = (DjangoFilterBackend,)
       filter_fields = ['name']
+      
 
 class MineralView(viewsets.ModelViewSet):
       queryset = Mineral.objects.all()
@@ -48,6 +49,27 @@ class ArmorView(viewsets.ModelViewSet):
       serializer_class = ArmorSerializer
       filter_backends = (DjangoFilterBackend,)
       filter_fields = ['person_id']
+
+class PairedView(viewsets.ModelViewSet):
+      queryset = Paired.objects.all()
+      serializer_class = PairedSerializer
+      filter_backends = (DjangoFilterBackend,)
+      filter_fields = ['armor_id','weapon_id']
+
+class FightView(viewsets.ModelViewSet):
+      queryset = Fight.objects.all()
+      serializer_class = FightSerializer
+      filter_backends = (DjangoFilterBackend,)
+      filter_fields = ['person_id']
+
+class EquipView(viewsets.ModelViewSet):
+      queryset = Equip.objects.all()
+      serializer_class = EquipSerializer
+      filter_backends = (DjangoFilterBackend,)
+      filter_fields = ['person_id']
+
+
+
 
 def index(request):
      return HttpResponse("test")

@@ -18,7 +18,7 @@ class Mineral_type(models.Model):
 
 class Armor(models.Model):
 	damage_reduction = models.FloatField(validators=[MinValueValidator(0),MaxValueValidator(1)])
-	amount_modifier = models.ForeignKey(Mineral_type,null=True,on_delete=models.SET_NULL)
+	amount_modifier = models.ForeignKey(Mineral_type,on_delete=models.CASCADE)
 	person_id = models.ForeignKey(Person, on_delete=models.CASCADE)
 	def __str__(self):
 		return str(self.person_id)
@@ -27,6 +27,7 @@ class Weapon(models.Model):
 	damage = models.IntegerField()
 	durability = models.IntegerField(validators=[MinValueValidator(0)])
 	person_id = models.ForeignKey(Person, on_delete=models.CASCADE)
+	mineral_type = models.ForeignKey(Mineral_type,on_delete=models.CASCADE)
 	def __str__(self):
 		return str(self.person_id)
 
@@ -59,6 +60,14 @@ class Enemy(models.Model):
 	def __str__(self):
 		return str(self.enemy_class) + "-" + str(self.world_id) + "- x:" + str(self.location_x) + "- y:" + str(self.location_y)
 
-# class Fight(models.Model):
+class Paired(models.Model):
+	armor_id = models.ForeignKey(Armor,null=True,on_delete=models.SET_NULL)
+	weapon_id = models.ForeignKey(Weapon,null=True,on_delete=models.SET_NULL)
 
+class Fight(models.Model):
+	enemy_id = models.ForeignKey(Enemy,null=True,on_delete=models.SET_NULL)
+	person_id = models.ForeignKey(Person, on_delete=models.CASCADE)
 
+class Equip(models.Model):
+	person_id = models.ForeignKey(Person, on_delete=models.CASCADE)
+	gear = models.ForeignKey(Paired, on_delete=models.CASCADE)

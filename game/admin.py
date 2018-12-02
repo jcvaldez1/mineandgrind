@@ -9,4 +9,6 @@ admin.site.register(Mineral)
 admin.site.register(Armor)
 admin.site.register(Enemy_type)
 admin.site.register(Mineral_type)
-
+admin.site.register(Paired)
+admin.site.register(Equip)
+admin.site.register(Fight)
