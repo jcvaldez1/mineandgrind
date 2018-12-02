@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\InitScene.cs">
+    <Files>
+      <File FileName="Assets\Inventory.cs" Line="26" Column="41" />
+      <File FileName="Assets\InventoryScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\InitScene.cs" Line="95" Column="31" />
+      <File FileName="Assets\DatabaseModels.cs" Line="1" Column="1" />
+      <File FileName="Assets\Constants.cs" Line="12" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
